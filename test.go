@@ -3,23 +3,32 @@ package main
 import "fmt"
 
 func main() {
-	// strings
-	var nameOne string = "Lewis"
-	//integer
-	var age int = 22
-	//float
-	var deci float32 = 2.2
-	var dec float64 = 2.5
-	//boolean
-	var yes bool = false
+	age := 22
+	name := "Lewis"
 
-	// another way of declaring variables.
-	// You dont have to give variable type and var
-	// cant be used out of a function
-	nameTwo := "Lewis Okoche"
-	ages := 22
-	decis := 3.142
-	nooo := true
+	/*
+	    imported fmt use,
+	   1.Print function
+	*/
+	fmt.Println("Hello", name, "you are", age)
 
-	fmt.Println(nameOne, age, deci, yes, dec, nameTwo, ages, decis, nooo)
+	//formatted string
+	/*format specifiers (
+	%v - default format for variables(strings,integers,boolean etc)
+	%s - format for strings
+	%d - format for integers
+	%f - format for float
+	%T - format for type of variable
+
+	)
+	*/
+	fmt.Printf("My name is %v and my age is %v", name, age)
+	fmt.Printf("age is of %T", age)
+
+	//Sprintf
+	/*
+
+	 */
+	var str = fmt.Sprintf("My age is %v and my name is %v\n", age, name)
+	fmt.Println(str)
 }
