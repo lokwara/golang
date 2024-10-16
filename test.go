@@ -1,37 +1,35 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	/*
-		Arrays
-		len is length
-		start by variable, variable name, then length of the array, followed by variable type
+		Standard Library
 	*/
-	var ages [3]int = [3]int{25, 57, 58}
+	//greeting := "Hello Friends"
 
-	names := [4]string{"Silus", "Gibson", "Lewis", "Lebron"}
-	names[1] = "gina" //this replaces the number 1 value from "Gibson" to "Gina"
+	//fmt.Println(strings.Contains(greeting, "hello"))
+	//fmt.Println(strings.ReplaceAll(greeting, "Hello", "hi")) //subtituted the hello with hi on output
 
-	fmt.Println(ages, len(ages)) //the len prints length of array
-	fmt.Println(names, len(names))
+	//fmt.Println(strings.Index(greeting, "ll"))
+	//fmt.Println(strings.Split(greeting, " "))
+	//fmt.Println(strings.ToUpper(greeting))
 
-	//Slices
-	/*
-		we dont enter number in square brackets
-	*/
-	var scores = []int{100, 50, 60} //this slice makes it easy to extend number of items on array without limit
-	scores[2] = 25
-	scores = append(scores, 85) //appends element to end of slice, making it remove 60 and add 85
+	ages := []int{45, 20, 35, 30, 75, 60, 50, 25}
 
-	fmt.Println(scores, len(scores))
+	sort.Ints(ages) //method 'sort' sorts the integers from small to big
+	fmt.Println(ages)
 
-	//slice ranges
-	rangeOne := names[1:3]  //get me from position 1 to 3
-	rangeTwo := names[2:]   //get me from position 2 to 3
-	rangeThree := names[:3] //get upto position 3
+	index := sort.SearchInts(ages, 75) //searches and gives you where it is located
+	fmt.Println(index)
 
-	fmt.Println(rangeOne, rangeTwo, rangeThree)
-	rangeOne = append(rangeOne, "Beatrice")
-	fmt.Println(rangeOne)
+	names := []string{"Lewis", "Lebron", "Beatrice", "Gibson", "Silus"}
+
+	sort.Strings(names) //this method sorted names according to name and letter
+	fmt.Println(names)
+
+	fmt.Println(sort.SearchStrings(names, "Beatrice"))
 }
