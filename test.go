@@ -5,30 +5,33 @@ import (
 )
 
 func main() {
-	/*x := 0
-	for x < 5 {
-		fmt.Println("value of x is:", x)
-		x++
-	}
-	*/
+	age := 45
 
-	//for i := 0; i < 5; i++ {
-	//	fmt.Println("value of i is:", i)
-	//}
+	fmt.Println(age <= 50)
+	fmt.Println(age >= 50)
+	fmt.Println(age == 45)
+	fmt.Println(age != 50)
+
+	if age < 30 {
+		fmt.Println("Age is less than 30")
+	} else if age < 40 {
+		fmt.Println("Age is less than 40")
+	} else {
+		fmt.Println("aGE IS NOT LESS THAN 45")
+	}
 
 	names := []string{"Lewis", "Lebron", "Gibson", "Silus"}
 
-	//for i := 0; i < len(names); i++ {
-	//	fmt.Println(names[i])
-	//}
-	//for index, value := range names {
-	//	fmt.Printf("The position at index %v is %v \n", index, value)
-	//}
+	for index, value := range names {
+		if index == 1 {
+			fmt.Println("Continue at pos", index)
+			continue
+		}
+		if index > 2 {
+			fmt.Println("breaking at pos", index)
+			break
+		}
 
-	for _, value := range names {
-		fmt.Printf("The value is %v \n", value)
-		value = "new string"
+		fmt.Printf("the value at pos %v\n", index, value)
 	}
-
-	fmt.Println(names)
 }
